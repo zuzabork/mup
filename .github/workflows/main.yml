@@ -4,8 +4,9 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
+      - run: pip install nbformat ipykernel
       - uses: actions/checkout@v7
       - run: python -c "print('Hello!')"
       - uses: quarto-dev/quarto-actions/setup@v2
       - run: quarto render article.ipynb --execute --to pdf
-      - run: pip install nbformat ipykernel
+      
